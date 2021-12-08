@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('partials/head.ejs') %>
+</head>
+<body class="bg-dark bg-gradient">
+    <%- include ('partials/navbar.ejs') %>
+
+    <section class="p-5 text-center" id="wordsInputSection">
+        <div class="container">
+            <h2 class="fw-bold">What's on your mind?</h2>
+            <form class="input-group" action="/postWords" method="POST" id="wordsInputForm">
+                <div class="container-fluid">
+                    <textarea name="wordsInput" id="wordsInput" class="form-control bg-light" cols="30" rows="5"></textarea>
+                </div>
+                
+                <div class="container-fluid d-flex justify-content-between">
+                    <div class="bg-secondary">
+                        <label for="moodInput" class="fw-bold">How are you feeling?</label>
+                        <select name="moodInput" id="moodInput" class="bg-secondary text-light form-control-sm">
+                            <option value="neutral">Neutral</option>
+                            <option value="happy">Happy</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-secondary" type="submit" form="wordsInputForm">Save</button>
+                    
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section id="dailyPonderSection" class="">
+        <div class="container d-flex justify-content-center">
+            <% if(tableResult.length!=0){%>
+            <div class="card bg-dark text-light m-5 w-50 border p-3">
+                <div class="class-body">
+                    
+                    <p class="card-text"><%=tableResult[0].words%></p>
+                    <p class="card-subtitle text-secondary"><%=tableResult[0].mood%></p>
+                    <p class="card-subtitle text-muted mt-1"><%=tableResult[0].datetime%></p>
+                    
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </section>
+
+
+    <%- include('partials/scripts.ejs') %>
+</body>
+</html>

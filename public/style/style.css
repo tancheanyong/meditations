@@ -1,0 +1,22 @@
+body::before{
+    content:'';
+    display: block;
+    height:70px;
+}
+body{
+    min-height: 100vh;
+}
+
+#wordsInputSection{
+    background-image: url('../img/pexels-monicore-135157.jpg');
+    background-size: cover;
+    background-position-y: center;
+
+}
+
+#searchSection{
+    background-image: url('../img/vidar-nordli-mathisen-641pLhGEEyg-unsplash.jpg');
+    background-size: cover;
+    background-position-y: center;
+}
+
