@@ -58,3 +58,14 @@ exports.keywordSearch=(req,res)=>{
         };
     });
 }
+
+exports.deleteCard = (req,res) =>{
+   const datetime=req.params.datetime;
+   console.log(datetime);
+   const sqlquery='DELETE FROM cards WHERE datetime="'+datetime+'"';
+   db.query(sqlquery,(err,rows)=>{
+        if(err) throw err;
+        console.log('Delete successful!');
+        res.redirect('/browse');
+   });
+}

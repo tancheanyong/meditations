@@ -21,7 +21,7 @@ exports.getHome=(req,res)=>{
 exports.postWords=(req,res)=>{
     
     const dateObj=new Date();
-    const date=dateObj.getFullYear()+'/'+(dateObj.getMonth()+1)+'/'+dateObj.getDate()+' '+dateObj.getHours()+':'+((dateObj.getMinutes()<10?'0':'')+dateObj.getMinutes())+':'+((dateObj.getSeconds()<10?'0':'')+dateObj.getSeconds());
+    const date=dateObj.getFullYear()+'-'+(dateObj.getMonth()+1)+'-'+dateObj.getDate()+' '+dateObj.getHours()+':'+((dateObj.getMinutes()<10?'0':'')+dateObj.getMinutes())+':'+((dateObj.getSeconds()<10?'0':'')+dateObj.getSeconds());
     console.log(date);
     const sqlWords=req.body.wordsInput;
     const sqlMood=req.body.moodInput;
