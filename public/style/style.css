@@ -6,6 +6,9 @@ body::before{
 body{
     min-height: 100vh;
 }
+.cardWords{
+    text-align: justify;
+}
 
 #wordsInputSection{
     background-image: url('../img/pexels-monicore-135157.jpg');
