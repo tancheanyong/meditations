@@ -1,6 +1,18 @@
 const db = require('../database');
 
+const createDb=()=>{
+    db.query('CREATE DATABASE IF NOT EXISTS meditations',(err,result)=>{
+        if(err) throw err;
+        db.query('CREATE TABLE IF NOT EXISTS `cards`(`datetime` VARCHAR(20) PRIMARY KEY, `mood` VARCHAR(10), `words` VARCHAR(500))',(err, result)=>{
+            if(err) throw err;
+            console.log('database created!');
+        });
+    });
+    
+};
+
 exports.getHome=(req,res)=>{
+    createDb();
     const data={
         "title":"Meditations",
         "tableResult":[]
