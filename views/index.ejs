@@ -12,15 +12,18 @@
                 <h2 class="fw-bold">What's on your mind?</h2>
                 <form class="input-group" action="/postWords" method="POST" id="wordsInputForm">
                     <div class="container-fluid">
-                        <textarea name="wordsInput" id="wordsInput" class="form-control bg-light" cols="30" rows="5"></textarea>
+                        <textarea name="wordsInput" id="wordsInput" class="form-control bg-light" cols="30" rows="5" required></textarea>
                     </div>
                     
                     <div class="container-fluid d-flex justify-content-between">
                         <div>
                             <label for="moodInput" class="fw-bold text-light">How are you feeling?</label>
                             <select name="moodInput" id="moodInput" class="bg-secondary text-light form-control-sm">
-                                <option value="neutral">Neutral</option>
+                                <option value="Neutral">Neutral</option>
                                 <option value="happy">Happy</option>
+                                <option value="sad">Sad</option>
+                                <option value="anxious">Anxious</option>
+                                <option value="angry">Angry</option>
                             </select>
                         </div>
                         <button class="btn btn-dark" type="submit" form="wordsInputForm">Save</button>
