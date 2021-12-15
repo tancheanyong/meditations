@@ -15,6 +15,6 @@ const indexRouter=require('./route/indexRouter');
 app.use('/',indexRouter);
 
 //Hosting
-app.listen(process.env.port || 3000, ()=>{
+app.listen(process.env.PORT || 3000, ()=>{
     console.log('App is running at port 3000...');
 });
